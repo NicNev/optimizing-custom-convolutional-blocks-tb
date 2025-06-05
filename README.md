@@ -1,39 +1,31 @@
-# Optimizing Custom Convolutional Blocks for Pre-trained CNNs in Tuberculosis X-ray Analysis
+# Optimizing Custom Convolutional Blocks for Pre-trained CNNs in Tuberculosis X-ray Analysis via Bayesian Optimization
 
-[cite_start]This repository provides the code, notebooks, and dataset links for the paper: **"Optimizing Custom Convolutional Blocks for Pre-trained CNNs in Tuberculosis X-ray Analysis via Bayesian Optimization"**.
+Code, notebooks, and dataset links for the paper: **"Optimizing Custom Convolutional Blocks for Pre-trained CNNs in Tuberculosis X-ray Analysis via Bayesian Optimization"**.
 
-[cite_start]The research focuses on enhancing Tuberculosis (TB) detection from chest X-rays by appending custom convolutional blocks to pre-trained CNN architectures (ResNet50, InceptionV3, and DenseNet121). [cite_start]The hyperparameters of these custom blocks were tuned using Bayesian Optimization to maximize performance.
+[cite_start]This repository provides resources to reproduce the results presented in the paper.  [cite_start]Bayesian Optimization was used to find optimal custom convolutional blocks appended to fine-tuned ResNet50, Inception V3, and DenseNet121 models (pre-trained on RadImageNet) for Tuberculosis X-ray classification. 
 
 ## Notebooks
 
-These Kaggle notebooks contain the code used for the Bayesian Optimization process, as well as for training and evaluating the final models.
+These notebooks contain the code used for optimization and model training/evaluation. They are designed to run on Kaggle.
 
-### Bayesian Optimization:
-* **[ResNet50 Base - Bayesian Optimization (Optuna)](https://www.kaggle.com/code/nicholasnevank/bo-resnet50):** Performs hyperparameter search using Optuna to find the best custom layer configuration for the ResNet50 base.
-* **[InceptionV3 Base - Bayesian Optimization (Optuna)](https://www.kaggle.com/code/nicholasnevank/bo-inceptionv3):** Performs hyperparameter search using Optuna to find the best custom layer configuration for the InceptionV3 base.
-* **[DenseNet121 Base - Bayesian Optimization (Optuna)](https://www.kaggle.com/code/nicholasnevank/bo-densenet121):** Performs hyperparameter search using Optuna to find the best custom layer configuration for the DenseNet121 base.
-
-### Model Training and Evaluation:
-* **[ResNet50 Base - Training & Evaluation](https://www.kaggle.com/code/nicholasnevank/resnet50-cnn-tb-2):** Trains and evaluates the ResNet50-based model using the optimized hyperparameters for TB detection.
-* **[InceptionV3 Base - Training & Evaluation](https://www.kaggle.com/code/nicholasnevank/inceptionv3-cnn-tb-2):** Trains and evaluates the InceptionV3-based model using the optimized hyperparameters for TB detection.
-* **[DenseNet121 Base - Training & Evaluation](https://www.kaggle.com/code/nicholasnevank/densenet121-cnn-tb):** Trains and evaluates the DenseNet121-based model using the optimized hyperparameters for TB detection.
+* **Bayesian Optimization (Optuna):** Performs the hyperparameter search using Optuna to find the best custom layer configurations.
+    * [ResNet50 Base](https://www.kaggle.com/code/nicholasnevank/bo-resnet50)
+    * [InceptionV3 Base](https://www.kaggle.com/code/nicholasnevank/bo-inceptionv3)
+    * [DenseNet121 Base](https://www.kaggle.com/code/nicholasnevank/bo-densenet121)
+* **Model Training:** Trains and evaluates the models using the optimized hyperparameters for each respective base architecture.
+    * [ResNet50 Base Training](https://www.kaggle.com/code/nicholasnevank/resnet50-cnn-tb-2)
+    * [InceptionV3 Base Training](https://www.kaggle.com/code/nicholasnevank/inceptionv3-cnn-tb-2)
+    * [DenseNet121 Base Training](https://www.kaggle.com/code/nicholasnevank/densenet121-cnn-tb)
 
 ## Output Datasets
 
-Datasets generated during the Bayesian Optimization process (hosted on Kaggle):
+Datasets generated during the Bayesian Optimization process:
 
-* **[Optuna Study Database Files](https://www.kaggle.com/datasets/nicholasnevank/optuna-study-db):** Contains the `optuna_study.db` files for the Optuna optimization trials for each base model.
-* **[Best Hyperparameters (JSON)](https://www.kaggle.com/datasets/nicholasnevank/bo-best-hyperparameters):** JSON files storing the best hyperparameter configurations found by Bayesian Optimization for each base model.
+* **[Optuna Study DB](https://www.kaggle.com/datasets/nicholasnevank/optuna-study-db):** Contains the `optuna_study.db` files for Optuna optimization trials for each base model.
+* **[Best Hyperparameters (JSON)](https://www.kaggle.com/datasets/nicholasnevank/bo-best-hyperparameters):** JSON files storing the best hyperparameter configurations found by the optimization for each base model.
 
-## Input Dataset
+## Input Datasets
 
-The X-ray dataset used for training and evaluation (hosted on Kaggle):
+The original X-ray dataset used for training and evaluation (hosted on Kaggle):
 
-* [cite_start]**[Tuberculosis (TB) Chest X-ray Dataset](https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset):** This public dataset contains normal and Tuberculosis positive chest X-ray images.
-
-## Citation
-
-If you use the code or findings from this research, please cite the original paper.
-(Details of the paper to be added here once published)
-
-[cite_start]The codebase for this study is also available at: [https://github.com/NicNev/optimizing-custom-convolutional-blocks-tb](https://github.com/NicNev/optimizing-custom-convolutional-blocks-tb)
+* [cite_start]**[Tuberculosis (TB) Chest X-ray Dataset](https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset)**
